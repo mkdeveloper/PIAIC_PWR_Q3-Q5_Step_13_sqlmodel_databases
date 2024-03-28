@@ -51,8 +51,6 @@ Please replace id with the actual ID of the hero you wish to update or delete.
 
 **Dependencies**
 -   SQLModel
--   Starlette
--   PostgreSQL
 -   Psycopg (PostgreSQL adapter)
 
 Make sure to install these dependencies before running the application.
