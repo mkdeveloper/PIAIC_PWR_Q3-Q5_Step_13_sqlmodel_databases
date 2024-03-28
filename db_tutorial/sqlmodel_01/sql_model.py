@@ -62,13 +62,13 @@ def add():
 # Function to update a hero's details in the database
 
 
-def update(id: int):
+def update(id: int, age: int):
     with Session(engine) as session:  # Start a new database session
         # Prepare a query to select the hero with id
         statement = select(Hero).where(Hero.id == id)
         # Execute the query and get the first result
         hero = session.exec(statement).first()
-        hero.age = 50  # Update the hero's age
+        hero.age = age  # Update the hero's age
         session.commit()  # Commit the changes to the database
         # Refresh the instance with the new data from the database
         session.refresh(hero)
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     # add()
 
     # Uncomment the following line to execute the update function
-    # update(2)
+    # update(id=2, age=40)
 
     # Uncomment the following line to execute the delete function
-    delete(2)
+    # delete(id=2)
